@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>差枚数グラフ読み取り</title>
+    <link th:href="@{/css/home.css}" rel="stylesheet">
+    <!-- Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<header th:replace="html/header"></header>
+<body>
+<div class="main">
+    <img src="/img/home-background-byBurst.jpg" alt="背景画像" class="backGroundImg">
+    <h1 th:text="グラフから差枚数を算出"></h1>
+    <img src="/img/homeIlust.png" alt="分析イラスト" class="home-ilust">
+</div>
+</body>
+</html>

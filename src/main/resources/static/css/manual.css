@@ -1,0 +1,205 @@
+.demo-img{
+    width: 100%;
+    height: 300px;
+}
+#canvas {
+    position: relative; /* 確実にこの要素がスタックコンテキストを持つように */
+    z-index: 1; /* 必要に応じて適切なz-indexを設定 */
+}
+
+/*.graph{*/
+/*    padding-left: 10px;*/
+/*    margin-bottom: 10px;*/
+/*    border: 2px;*/
+/*    border-radius: 10px;*/
+/*}*/
+#graph {
+    width: 97%; /* 親要素に対して90%の幅 */
+    height: 350px; /* ビューポートの高さの40% */
+    margin: 0 auto; /* 水平中央に配置 */
+    padding: 10px;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    position: relative; /* 子要素の絶対位置指定の基準点 */
+}
+.result-and-info {
+    display: flex;
+    justify-content: space-between; /* 要素間の間隔を均等に分配 */
+    align-items: flex-start; /* 要素をコンテナの上端に揃える */
+    width: 100%; /* コンテナの幅を最大に */
+    padding: 0 10px; /* 左右のパディングを追加して隙間を調整 */
+}
+
+.result-title{
+    font-size: 25px;
+}
+
+
+
+#result{
+    font-weight: bold;
+    font-size: 30px;
+}
+.title {
+    font-family: "ヒラギノ角ゴ Pro W3", sans-serif;
+    position: relative;
+    padding: 0.25em 1em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
+
+.title:before, .title:after {
+    content: '';
+    position: absolute;
+    top: -7px;
+    width: 2px;
+    height: -webkit-calc(100% + 14px);
+    height: calc(100% + 14px);
+    background-color: black;
+}
+.title:before {
+    left: 7px;
+}
+.title:after {
+    right: 7px;
+}
+
+.info-h{
+    padding-left: 30%;
+    font-size: 30px;
+}
+.info {
+    margin-right: 5px; /* infoとresult-displayの間の隙間を調整 */
+}
+.result-display{
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    position: relative; /* 子要素の絶対位置指定の基準点 */
+    margin-left: 13px;
+    width: 40%;
+
+}
+.info, .result-display {
+    flex: 1; /* 各要素が利用可能なスペースを均等に使用 */
+    margin: 10px; /* 共通のマージンを設定して余白を一定に */
+    padding: 10px;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    box-sizing: border-box; /* パディングとボーダーを幅に含む */
+}
+
+
+#submit-info{
+    margin-left: 30%;
+}
+.graph-info{
+    display: block
+}
+
+#min-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* 🚩これ無しだとスタイルがほぼ全く反映されないので注意 */
+    appearance: none;
+    cursor: pointer; /* カーソルを分かりやすく */
+    outline: none; /* スライダーのアウトラインは見た目がキツイので消す */
+    height: 40px; /* バーの高さ */
+    width: 30px; /* バーの幅 */
+    background: #00FF00; /* バーの背景色 */
+    border-radius: 10px; /* バーの両端の丸み */
+    border: solid 3px #dff1ff; /* バー周囲の線 */        /* サムを円形にする */
+}
+
+#min-slider{
+    -webkit-appearance: none; /* 🚩これ無しだとスタイルがほぼ全く反映されないので注意 */
+    appearance: none;
+    cursor: pointer; /* カーソルを分かりやすく */
+    outline: none; /* スライダーのアウトラインは見た目がキツイので消す */
+    height: 14px; /* バーの高さ */
+    width: 100%; /* バーの幅 */
+    background: #00FF00; /* バーの背景色 */
+    border-radius: 10px; /* バーの両端の丸み */
+    border: solid 3px #dff1ff; /* バー周囲の線 */
+}
+
+
+#max-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* 🚩これ無しだとスタイルがほぼ全く反映されないので注意 */
+    appearance: none;
+    cursor: pointer; /* カーソルを分かりやすく */
+    outline: none; /* スライダーのアウトラインは見た目がキツイので消す */
+    height: 40px; /* バーの高さ */
+    width: 30px; /* バーの幅 */
+    background: #00FFFF; /* バーの背景色 */
+    border-radius: 10px; /* バーの両端の丸み */
+    border: solid 3px #dff1ff; /* バー周囲の線 */        /* サムを円形にする */
+}
+
+#max-slider{
+    -webkit-appearance: none; /* 🚩これ無しだとスタイルがほぼ全く反映されないので注意 */
+    appearance: none;
+    cursor: pointer; /* カーソルを分かりやすく */
+    outline: none; /* スライダーのアウトラインは見た目がキツイので消す */
+    height: 14px; /* バーの高さ */
+    width: 100%; /* バーの幅 */
+    background: #00FFFF; /* バーの背景色 */
+    border-radius: 10px; /* バーの両端の丸み */
+    border: solid 3px #dff1ff; /* バー周囲の線 */
+}
+
+
+#final-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* 🚩これ無しだとスタイルがほぼ全く反映されないので注意 */
+    appearance: none;
+    cursor: pointer; /* カーソルを分かりやすく */
+    outline: none; /* スライダーのアウトラインは見た目がキツイので消す */
+    height: 40px; /* バーの高さ */
+    width: 30px; /* バーの幅 */
+    background: #FF00FF; /* バーの背景色 */
+    border-radius: 10px; /* バーの両端の丸み */
+    border: solid 3px #dff1ff; /* バー周囲の線 */        /* サムを円形にする */
+}
+
+#final-slider{
+    -webkit-appearance: none; /* 🚩これ無しだとスタイルがほぼ全く反映されないので注意 */
+    appearance: none;
+    cursor: pointer; /* カーソルを分かりやすく */
+    outline: none; /* スライダーのアウトラインは見た目がキツイので消す */
+    height: 14px; /* バーの高さ */
+    width: 100%; /* バーの幅 */
+    background: #FF00FF; /* バーの背景色 */
+    border-radius: 10px; /* バーの両端の丸み */
+    border: solid 3px #dff1ff; /* バー周囲の線 */
+}
+
+
+@media screen and (max-width:980px) {
+    .position-status {
+        font-size: 30px;
+    }
+
+    .slider{
+        -webkit-appearance: none; /* 🚩これ無しだとスタイルがほぼ全く反映されないので注意 */
+        appearance: none;
+        cursor: pointer; /* カーソルを分かりやすく */
+        outline: none; /* スライダーのアウトラインは見た目がキツイので消す */
+        height: 14px; /* バーの高さ */
+        width: 100%; /* バーの幅 */
+        background: #8acdff; /* バーの背景色 */
+        border-radius: 10px; /* バーの両端の丸み */
+        border: solid 3px #dff1ff; /* バー周囲の線 */
+    }
+}
+#submit-info{
+    width: 200px;
+    height: 50px;
+    color: #fff;
+    background-color: #eb6100;
+    border-radius: 100vh;
+}
+#memory-num{
+    padding-left: 40%;
+    width: 97%;
+    height: 50px;
+}

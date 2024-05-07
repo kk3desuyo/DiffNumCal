@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>差枚数グラフ読み取り</title>
+    <link th:href="@{/css/manual.css}" rel="stylesheet">
+    <link th:href="@{/css/header.css}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div th:insert="~{html/header}"></div>
+
+<div class="graph-and-info" >
+<div id="graph">
+    <img src="/img/uploadImg.png" class="demo-img">
+<div id="canvas">
+<!--<div id="imgPreviewField"></div>-->
+<canvas id="imgPreview" width="500px" height="500px" style="position: absolute; left: 0; top: 40px;"></canvas>
+<canvas id="drawing-canvas" width="500px" height="500px" style="position: absolute; left: 0; top: 40px;"></canvas>
+<form>
+    <input type="file" accept="image/*" multiple onchange="loadImage(this); hideDemoImage();">
+</form>
+
+</div>
+</div>
+    <div class="result-and-info">
+<div class="info">
+    <h4 class="info-h title">グラフ情報一覧</h4>
+    <ul>
+        <li>
+            <div class="PosiInfo">
+                <p class="position-status">0の目盛りの位置取得</p>
+                <input id="min-slider" class="slider" type="range">
+
+            </div>
+        </li>
+        <li>
+            <div class="PosiInfo">
+                <p class="position-status">上部目盛りの位置取得</p>
+                <input id="max-slider" class="slider" type="range" >
+            </div>
+        </li>
+        <li>
+            <div class="PosiInfo">
+                <p class="position-status">最終位置</p>
+                <input id="final-slider" class="slider" type="range" >
+
+            </div>
+
+        </li>
+        <li>
+            <div class="PosiInfo">
+                <p class="position-status">上部目盛りの値</p>
+                <input type="number" id="memory-num">
+            </div>
+
+        </li>
+
+    </ul>
+
+    <button id="submit-info" onclick="diffNumCal()">差枚数計算</button>
+</div>
+
+<div class="result-display">
+    <p class="result-title title">計算結果</p>
+    <p id="result">-枚</p>
+</div>
+    </div>
+</div>
+
+
+
+<script src="/js/manual.js"></script>
+</body>
+</html>
