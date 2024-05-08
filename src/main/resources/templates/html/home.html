@@ -1,18 +1,51 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>差枚数グラフ読み取り</title>
     <link th:href="@{/css/home.css}" rel="stylesheet">
-    <!-- Bootstrap CSS link -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <header th:replace="html/header"></header>
 <body>
 <div class="main">
-    <img src="/img/home-background-byBurst.jpg" alt="背景画像" class="backGroundImg">
-    <h1 th:text="グラフから差枚数を算出"></h1>
-    <img src="/img/homeIlust.png" alt="分析イラスト" class="home-ilust">
+    <div class="box-explain">
+        <img class="demo-img" th:src="@{../img/demo-img.jpg}" alt="サンプルグラフ">
+        <div class="explain">
+            <p class="font-base explain-p">画像をアップロードして<br>以下の三つを指定するだけ！</p>
+            <ul class="three-ul">
+                <ul class="cp_list">
+                    <li class="three font-base">0の目盛り位置</li>
+                    <li class="three font-base"> 上部の目盛り位置</li>
+                    <li class="three font-base"> 上部目盛りの値</li>
+                </ul>
+
+            </ul>
+            <form th:action="@{/home/manualCal}" method="get">
+                <button type="submit" class="manualCal-button">試す</button>
+            </form>
+            <img src="/img/homeIlust.png" alt="分析イラスト" class="home-ilust">
+        </div>
+    </div>
+</div>
+<div class="box-news">
+    <h2 class="news-h">News</h2>
+    <ul class="news-list">
+        <li>
+            <div class="news-content">
+                <hr class="news-divide">
+                <a th:href="@{/home/manualCal}" class="content-title">差枚数計算(手動)を実装しました。</a>
+                <p class="date">2024.05.01</p>
+            </div>
+        </li>
+        <li>
+            <div class="news-content">
+                <hr class="news-divide">
+                <a th:href="@{/home/manualCal}" class="content-title">差枚数計算(手動)を実装しました。</a>
+                <p class="date">2024.05.01</p>
+            </div>
+        </li>
+    </ul>
 </div>
 </body>
 </html>

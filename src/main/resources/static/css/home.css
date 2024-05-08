@@ -1,19 +1,165 @@
-.backGroundImg {
+
+
+body {
+    width: 100vw;
+    height: 100vh;
     background-image: url("../img/home-background-byBurst.jpg");
     background-size: cover;  /* 背景画像がコンテナをカバーするように設定 */
     background-position: center center;
     background-repeat: no-repeat;
-    width: 100%;
-    height: 1000px;
-    -ms-filter: blur(6px);
-    filter: blur(6px);
+    /*-ms-filter: blur(6px);*/
+    /*filter: blur(6px);*/
+}
+/* 更新されたCSS */
+.box-explain {
+    margin: 10px auto;
+    width: 97vw;
+    height: 45vh;
+    background: white;
+    border-radius: 5%;
+    display: flex; /* box をフレックスコンテナにする */
+    align-items: center; /* 縦方向の中央揃え */
+    justify-content: space-between; /* 2つの半分の間にスペースを配置 */
 }
 
-.home-ilust{
-    bottom: 0;
-    right: 0;
-    width: 900px;
-    height: 850px;
-    position: absolute;
+.three{
+    text-align: left;
+}
+.font-base,.manualCal-button{
+    font-family: "Helvetica Neue",sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+}
+.demo-img {
+    width: 48%; /* 親コンテナの半分を割り当てる */
+    height: 100%;
+    padding: 10px; /* 必要に応じて調整 */
+    border-radius: 5%;
+}
+.explain-p{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+ul.cp_list {
+    position: relative;
+    padding: 0;
+    list-style-type: none;
+}
+ul.cp_list li {
+    padding: 0.5em 0.5em 0.6em 0.5em;
+    margin-bottom: 5px;
+    line-height: 1.5;
+    vertical-align: middle;
+    background: cadetblue;
+    border-radius: 20px 0px 0px 20px;
+    color: #ffffff;
+}
+ul.cp_list li::before {
+    display:inline-block;
+    vertical-align: middle;
+    content:'';
+    margin-right: 8px;
+    width:1em;
+    height: 1em;
+    background: #fff;
+    border-radius: 50%;
+}
+.explain {
+    width: 52%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.manualCal-button{
+    width: 200px;
+    height: 50px;
+    color: #fff;
+    background-color: #eb6100;
+    border-radius: 100vh;
+}
 
+
+.home-ilust {
+    margin: 0 auto;
+    width: 310px;
+    max-height: 310px;  /* これを '100%' から 'auto' に変更してみましょう */
+    object-fit: contain; /* 'cover' から 'contain' に変更して全体が見えるように調整 */
+}
+
+/* 親要素にrelativeポジショニングを追加 */
+.main, .box-explain, .explain {
+    position: relative;
+}
+.explain-1-img{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+
+.title{
+    font-weight: bold;
+    font-family: "Helvetica Neue"
+    ,sans-serif;
+}
+
+.box-news {
+    margin: 10px auto;
+    width: 97vw;
+    height: 45vh;
+    background: white;
+    border-radius: 5%;
+
+   text-align: center;
+}
+
+.news-h{
+    font-weight: bold;
+    font-size: 40px;
+    font-family: "Helvetica Neue", sans-serif;
+}
+.content-title{
+    font-family: "Helvetica Neue" , sans-serif;
+    font-size: 20px;
+}
+
+.news-list{
+    list-style: none;
+    width: 80%;
+    margin: 0 auto;
+}
+.date{
+    float: right;
+}
+.content-title{
+    float: left;
+}
+
+.news-content{
+    margin-top: 10px;
+}
+.news-content::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width:980px) {
+    .box-explain {
+        margin: 10px auto;
+        width: 97vw;
+        height: 40vh;
+        background: white;
+        border-radius: 5%;
+        display: flex; /* box をフレックスコンテナにする */
+        align-items: center; /* 縦方向の中央揃え */
+        justify-content: space-between; /* 2つの半分の間にスペースを配置 */
+    }
+
+    .font-base,.manualCal-button{
+        font-family: "Helvetica Neue",sans-serif;
+        font-weight: bolder;
+        font-size: 35px;
+    }
 }
