@@ -6,15 +6,20 @@ body {
     background-image: url("../img/home-background-byBurst.jpg");
     background-size: cover;  /* 背景画像がコンテナをカバーするように設定 */
     background-position: center center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     /*-ms-filter: blur(6px);*/
     /*filter: blur(6px);*/
 }
+.explain-p{
+    font-family: "Helvetica Neue",sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+}
 /* 更新されたCSS */
-.box-explain {
+.main {
     margin: 10px auto;
     width: 97vw;
-    height: 45vh;
+    height: 55vh;
     background: white;
     border-radius: 5%;
     display: flex; /* box をフレックスコンテナにする */
@@ -24,6 +29,9 @@ body {
 
 .three{
     text-align: left;
+    font-family: "Helvetica Neue",sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
 }
 .font-base,.manualCal-button{
     font-family: "Helvetica Neue",sans-serif;
@@ -107,7 +115,7 @@ ul.cp_list li::before {
 .box-news {
     margin: 10px auto;
     width: 97vw;
-    height: 45vh;
+    height: 30vh;
     background: white;
     border-radius: 5%;
 
@@ -161,5 +169,13 @@ ul.cp_list li::before {
         font-family: "Helvetica Neue",sans-serif;
         font-weight: bolder;
         font-size: 35px;
+    }
+}
+@media screen and (min-width:980px) {
+
+    .explain-p,.three{
+        font-family: "Helvetica Neue",sans-serif;
+        font-weight: bolder;
+        font-size: 30px;
     }
 }

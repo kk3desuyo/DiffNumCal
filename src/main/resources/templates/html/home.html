@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <title>差枚数グラフ読み取り</title>
     <link th:href="@{/css/home.css}" rel="stylesheet">
+    <link th:href="@{/css/footer.css}" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-<header th:replace="html/header"></header>
+<header th:replace="html/new-header"></header>
 <body>
 <div class="main">
-    <div class="box-explain">
+
         <img class="demo-img" th:src="@{../img/demo-img.jpg}" alt="サンプルグラフ">
         <div class="explain">
-            <p class="font-base explain-p">画像をアップロードして<br>以下の三つを指定するだけ！</p>
+            <p class="explain-p">画像をアップロードして<br>以下の三つを指定するだけ！</p>
             <ul class="three-ul">
                 <ul class="cp_list">
-                    <li class="three font-base">0の目盛り位置</li>
-                    <li class="three font-base"> 上部の目盛り位置</li>
-                    <li class="three font-base"> 上部目盛りの値</li>
+                    <li class="three">0の目盛り位置</li>
+                    <li class="three"> 上部の目盛り位置</li>
+                    <li class="three "> 上部目盛りの値</li>
                 </ul>
 
             </ul>
@@ -26,7 +27,7 @@
             </form>
             <img src="/img/homeIlust.png" alt="分析イラスト" class="home-ilust">
         </div>
-    </div>
+
 </div>
 <div class="box-news">
     <h2 class="news-h">News</h2>
@@ -47,5 +48,10 @@
         </li>
     </ul>
 </div>
+
+<footer th:replace="html/footer"></footer>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4793670059538491"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

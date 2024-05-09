@@ -1,0 +1,11 @@
+.footer-box{
+    text-align: center;
+    margin-top: 150px;
+    width: 100%;
+    height: 80px;
+    background-color: #eb6100;
+}
+.privacy-policy{
+    font-size: 13px;
+    color: white;
+}

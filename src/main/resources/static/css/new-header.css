@@ -1,0 +1,72 @@
+.nav-box{
+    margin: 10px auto;
+    background-color: orangered;
+    width: 97vw;
+    height: 5vh;
+    border-radius: 90px;
+    position: relative;
+}
+
+.nav-item-list {
+    float: right;
+    display: flex;  /* フレックスボックスを適用 */
+    align-items: center;  /* 子要素を縦方向の中央に揃える */
+}
+
+.nav-content {
+    margin-right: 20px;  /* 各ナビゲーション項目の間にスペースを追加 */
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}
+.brand-logo{
+    color: white;
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    font-weight: bold;
+    font-size: 30px;
+}
+.material-symbols-outlined{
+    color: white;
+    font-size: 30px !important;
+}
+
+.nav-link{
+    color:white;
+    font-weight: bold;
+    font-size: 20px;
+    display:flex;
+    flex-flow: column;
+}
+
+@media (max-width:980px) {
+    .brand-logo{
+        color: white;
+        position: absolute;
+        top: 20%;
+        left: 5%;
+        font-weight: bold;
+        font-size: 50px;
+    }
+    /*.nav-content{*/
+    /*    display: inline-block;*/
+    /*    vertical-align: middle;*/
+    /*}*/
+
+    .nav-link .material-symbols-outlined{
+        color:white;
+        font-weight: bold;
+        font-size: 70px !important;
+        display:flex;
+        flex-flow: column;
+    }
+    .nav-box{
+        margin: 10px auto;
+        background-color: orangered;
+        width: 97vw;
+        height: 7vh;
+        border-radius: 90px;
+        position: relative;
+    }
+}

@@ -10,14 +10,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Material Symbols Outlined -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link th:href="@{/css/header.css}" rel="stylesheet">
-    <style>
-        @media (max-width: 991px) {
-            .navbar-collapse {
-                justify-content: flex-end; /* メニューを右寄せにする */
-            }
-        }
-    </style>
+    <link th:href="@{/css/new-header.css}" rel="stylesheet">
+<!--    <style>-->
+<!--        @media (max-width: 991px) {-->
+<!--            .navbar-collapse {-->
+<!--                justify-content: flex-end; /* メニューを右寄せにする */-->
+<!--            }-->
+<!--        }-->
+<!--    </style>-->
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -26,10 +26,10 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class=" navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/howTo}">
+                    <a class="nav-link" th:href="@{/home/manualCal/how-to}">
                         <span class="material-symbols-outlined">book</span> 使い方
                     </a>
                 </li>
