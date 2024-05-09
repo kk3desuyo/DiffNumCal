@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HttpController {
 
-    @RequestMapping("/home")
+    @RequestMapping(value = {"/home", "/"})
     public String showHomePage(Model model) {
-        return "html/home";  // templates/html/home.htmlへのビュー名を返す
+        return "html/home";
     }
     @RequestMapping("/home/privacy-policy")
     public String showPrivacyPolicy(Model model) {
