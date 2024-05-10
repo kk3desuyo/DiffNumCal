@@ -13,7 +13,7 @@
     color: aliceblue;
 }
 .navbar {
-    height: 8vh; /* 画面の高さの20%に設定 */
+    height: 9vh; /* 画面の高さの20%に設定 */
 }
 
 .nav-link .material-symbols-outlined {
