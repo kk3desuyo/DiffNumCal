@@ -74,6 +74,18 @@ var maxMemoryY = -1;
 var finalX = -10000;
 var finalY = -100000;
 
+//サニタイズ
+function sanitize(input) {
+    const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+    };
+    return input.replace(/[&<>"']/g, function(m) { return map[m]; });
+}
+
 //差枚数計算
 function diffNumCal() {
     //スライダーが動かされていない時のアラート
@@ -82,12 +94,17 @@ function diffNumCal() {
         return;
     }
     var MemoryNum;
-    MemoryNum = document.getElementById('memory-num').value; // ボタンクリック時に値を取得するように修正
-
+    MemoryNum = sanitize(document.getElementById('memory-num').value); // ボタンクリック時に値を取得するように修正
+    //入力検証
+    if (!/^-?\d*\.?\d+$/.test(MemoryNum)) { // 正または負の数値であるかを検証する正規表現
+        alert('数値を入力してください。');
+        MemoryNum = ''; // 不正な入力をクリア
+    }
     if (MemoryNum === '') {
         alert('上部目盛りの値を入力してください。');
         return;
     }
+
     console.log('minY'+minMemoryY)
     console.log('maxY'+maxMemoryY)
     var distanceMinYtoMaxY = Math.abs(minMemoryY - maxMemoryY);
