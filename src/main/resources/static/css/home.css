@@ -168,7 +168,7 @@ ul.cp_list li::before {
     .font-base,.manualCal-button{
         font-family: "Helvetica Neue",sans-serif;
         font-weight: bolder;
-        font-size: 35px;
+        font-size: 34px;
     }
 }
 @media screen and (min-width:980px) {
