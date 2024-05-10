@@ -92,7 +92,7 @@ ul.cp_list li::before {
 .home-ilust {
     margin: 0 auto;
     width: 310px;
-    max-height: 310px;  /* これを '100%' から 'auto' に変更してみましょう */
+    max-height: 230px;  /* これを '100%' から 'auto' に変更してみましょう */
     object-fit: contain; /* 'cover' から 'contain' に変更して全体が見えるように調整 */
 }
 
@@ -176,6 +176,6 @@ ul.cp_list li::before {
     .explain-p,.three{
         font-family: "Helvetica Neue",sans-serif;
         font-weight: bolder;
-        font-size: 30px;
+        font-size: 20px;
     }
 }
