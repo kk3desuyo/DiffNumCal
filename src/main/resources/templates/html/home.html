@@ -14,13 +14,14 @@
     <title>差枚数グラフ読み取り</title>
     <link th:href="@{/css/home.css}" rel="stylesheet">
     <link th:href="@{/css/footer.css}" rel="stylesheet">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <header th:replace="html/new-header"></header>
 <body>
 <div class="main">
 
-        <img class="demo-img" th:src="@{../img/demo-img.jpg}" alt="サンプルグラフ">
+        <img class="demo-img" th:src="@{../img/demo-img.png}" alt="サンプルグラフ">
         <div class="explain">
             <p class="explain-p">画像をアップロードして<br>以下の三つを指定するだけ！</p>
             <ul class="three-ul">
@@ -32,9 +33,9 @@
 
             </ul>
             <form th:action="@{/home/manualCal}" method="get">
-                <button type="submit" class="manualCal-button">試す</button>
+                <button type="submit" class="manualCal-button">差枚数計算はこちら</button>
             </form>
-            <img src="/img/homeIlust.png" alt="分析イラスト" class="home-ilust">
+<!--            <img src="/img/homeIlust.png" alt="分析イラスト" class="home-ilust">-->
         </div>
 
 </div>
