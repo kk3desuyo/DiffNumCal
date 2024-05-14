@@ -15,12 +15,13 @@
 /*}*/
 #graph {
     width: 97%; /* 親要素に対して90%の幅 */
-    height: 350px; /* ビューポートの高さの40% */
+    height: 375px; /* ビューポートの高さの40% */
     margin: 0 auto; /* 水平中央に配置 */
     padding: 10px;
     border: 1px solid #333333;
     border-radius: 10px;
     position: relative; /* 子要素の絶対位置指定の基準点 */
+    text-align: center;
 }
 .result-and-info {
     display: flex;
@@ -36,7 +37,7 @@
 
 
 
-#result{
+.result{
     font-weight: bold;
     font-size: 30px;
 }
@@ -71,6 +72,40 @@
 .info {
     margin-right: 5px; /* infoとresult-displayの間の隙間を調整 */
 }
+.left-display{
+    display: flex;
+    flex-flow: column;
+    width: 40%;
+}
+.label-base{
+        position: absolute;
+        top: 15px;
+        left: 10px;
+        font-size: 16px;
+        color: #a0a0a0;
+        margin-left: 5%; /* 残りの幅を均等に左右に配置 */
+        margin-right: 5%;
+        margin-top: 10px;
+        transition: all 0.25s ease;
+
+        &.focus{
+            top: -25px;
+            left: 5px;
+            font-size: 14px;
+            color: #fff;
+        }
+}
+.nice-wrap{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 0 auto 10px;
+
+}
+.grape-input{
+    margin-top: 3px;
+    width: 90%;
+}
 .result-display{
     text-align: center;
     margin-top: 10px;
@@ -79,8 +114,16 @@
     border-radius: 10px;
     position: relative; /* 子要素の絶対位置指定の基準点 */
     margin-left: 13px;
-    width: 40%;
+    width: 100%;
 
+}
+.grape-simulate{
+        text-align: center;
+        margin-top: 3px;
+        border: 1px solid #333333;
+        border-radius: 10px;
+        margin-left: 13px;
+        width: 100%;
 }
 .info, .result-display {
     flex: 1; /* 各要素が利用可能なスペースを均等に使用 */
@@ -90,7 +133,31 @@
     border-radius: 10px;
     box-sizing: border-box; /* パディングとボーダーを幅に含む */
 }
-
+.input-file-label{
+    font-weight: bold;
+    font-size: 22px;
+}
+.result-container {
+    display: inline-flex; /* インラインフレックスボックス */
+    align-items: center; /* 要素を中央揃え */
+}
+.file-form{
+    display: inline-block;
+    text-align: center;
+}
+.input-file{
+    display: none;
+}
+.input-file-label {
+    border-radius: 20px;
+    margin-top: 3px;
+    width: 350px;
+    height: 50px;
+    color: #ffffff; /* ラベルテキストの色を指定する */
+    background-color: #eb6100;/* ラベルの背景色を指定する */
+    padding: 10px; /* ラベルとテキスト間の余白を指定する */
+    border: double 4px #AAAAAA;/* ラベルのボーダーを指定する */
+}
 
 #submit-info{
     margin-left: 30%;
@@ -160,7 +227,33 @@
     border-radius: 10px; /* バーの両端の丸み */
     border: solid 3px #dff1ff; /* バー周囲の線 */        /* サムを円形にする */
 }
-
+.input{
+    position: relative;
+    margin: 8px 0 0 -14px;
+}
+input::before {
+    content: “添付ファイル：”;
+    position: absolute;
+    background: #fff;
+    width: 110px;
+    height: 26px;
+    line-height: 1.8;
+    text-align: right;
+}
+.input-file-span{
+    display: block;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: “游ゴシック”, “Yu Gothic”;
+    background: #ee7800;
+    padding: 8px 0;
+    border-radius: 16px;
+    max-width: 240px;
+    text-align: center;
+    transition: .3s;
+    cursor:pointer;
+}
 #final-slider{
     -webkit-appearance: none; /* 🚩これ無しだとスタイルがほぼ全く反映されないので注意 */
     appearance: none;
@@ -201,8 +294,13 @@
     background-color: #eb6100;
     border-radius: 100vh;
 }
-#memory-num{
+#memory-num,#big-count,#reg-count,#revolutions{
     padding-left: 40%;
     width: 97%;
     height: 50px;
+}
+
+.grape-attention-content,.model-label{
+    font-size: 27px;
+    font-weight: bold;
 }

@@ -17,10 +17,11 @@
     <img src="/img/uploadImg.png" class="demo-img">
 <div id="canvas">
 <!--<div id="imgPreviewField"></div>-->
-<canvas id="imgPreview" width="500px" height="500px" style="position: absolute; left: 0; top: 40px;"></canvas>
-<canvas id="drawing-canvas" width="500px" height="500px" style="position: absolute; left: 0; top: 40px;"></canvas>
-<form>
-    <input type="file" accept="image/*" multiple onchange="loadImage(this); hideDemoImage();">
+<canvas id="imgPreview" width="500px" height="500px" style="position: absolute; left: 0; top: 65px;"></canvas>
+<canvas id="drawing-canvas" width="500px" height="500px" style="position: absolute; left: 0; top: 65px;"></canvas>
+<form class="file-form">
+    <input class="input-file" id="inputFile" type="file" accept="image/*" multiple onchange="loadImage(this); hideDemoImage();">
+    <label for="inputFile" class="input-file-label"><span class="file-attention">ファイルを選択してください。</span></label>
 </form>
 
 </div>
@@ -54,18 +55,57 @@
             <div class="PosiInfo">
                 <p class="position-status">グラフ目盛りの値</p>
                 <input type="number" id="memory-num" class="input-font">
+
             </div>
 
         </li>
 
     </ul>
 
-    <button id="submit-info" onclick="diffNumCal()">差枚数計算</button>
+    <button id="submit-info" onclick="diffNumCal(); Model.grape_simulate();">差枚数計算</button>
 </div>
+<div class="left-display">
+    <div class="result-display">
+        <p class="result-title title">計算結果</p>
+        <div class="result-container">
+            <p class="result">差枚数 :</p>
+            <p id="diff-num" class="result">-</p>
+            <p class="result">枚</p>
+        </div>
+        <div class="result-container">
+            <p  class="result">ぶどう確率 : 1/</p>
+            <p id="grape-probability" class="result">-</p>
+        </div>
 
-<div class="result-display">
-    <p class="result-title title">計算結果</p>
-    <p id="result">-枚</p>
+    </div>
+    <div class="grape-simulate">
+        <div>
+            <label for="model" class="model-label">機種名</label>
+            <select id="model" name="model">
+                <option value="">選択してください</option>
+                <option value="iam">アイムジャグラー</option>
+                <option value="fanky">ファンキージャグラー</option>
+                <option value="my">マイジャグラー</option>
+                <option value="happy">ハッピー
+                </option>
+            </select>
+        </div>
+        <div class="nice-wrap">
+            <input class=" grape-input" id="big-count" type="number">
+            <label class="big-count-label label-base">BIG回数</label>
+        </div>
+        <div class="nice-wrap">
+            <input class=" grape-input" id="reg-count" type="number">
+            <label class="reg-count-count-label label-base">REG回数</label>
+        </div>
+        <div class="nice-wrap">
+            <input class=" grape-input" id="revolutions"  type="number">
+            <label class="revolutions-label label-base">回転数</label>
+        </div>
+        <div class="grape-attention">
+            <p class="grape-attention-content">※差枚数のみの利用の場合には機種名、BIG,REG回数、回転数の入力は不要です。</p>
+        </div>
+    </div>
 </div>
     </div>
 </div>
