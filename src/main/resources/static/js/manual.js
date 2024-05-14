@@ -259,6 +259,13 @@ class Model{
         var num_of_revolutions = sanitize(document.getElementById('revolutions').value)
         var model_input = document.getElementById('model').value
         var diff_num = parseInt(document.getElementById('diff-num').innerText)
+         //入力のバリデーションチェック 一個でも入力されていたらぶどうシミュを使用と判定する
+        if(big_count !== '' || reg_count !== ''||num_of_revolutions !== '' || model_input !== '' || diff_num !== '')
+            //一個でも入力漏れがある場合
+            if(big_count ==='' || reg_count !== '' || num_of_revolutions !== '')
+                alert('機種,BIG回数,REG回数　又は回転数が入力漏れがあります。')
+
+         console.log(big_count)
         //  var big_count = 24
         //  var reg_count =31
         //  var num_of_revolutions = 6671
