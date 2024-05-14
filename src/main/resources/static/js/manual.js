@@ -270,7 +270,7 @@ class Model{
          if (big_count !== '' || reg_count !== '' || num_of_revolutions !== '' || model_input !== '') {
              // 一個でも入力漏れがある場合
              if (big_count === '' || reg_count === '' || num_of_revolutions === '' || model_input === '') {
-                 alert('機種, BIG回数, REG回数 または回転数が入力漏れがあります。');
+                 alert('機種, BIG回数, REG回数 または回転数が入力漏れがあります。もし、ぶどうシミュを使わない場合には、機種名、BIG,REG回数,回転数の欄にデータを一つも入力しないでください。');
              }
          }
          console.log(big_count)
