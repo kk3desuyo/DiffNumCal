@@ -277,8 +277,8 @@ class Model {
         console.log('iam', model_input);
         console.log('diff', diff_num);
 
-        // 一個でも入力漏れがある場合
-        if (big_count === '' || reg_count === '' || num_of_revolutions === '' || model_input === '') {
+// 一個でも入力漏れがある場合
+        if (!big_count || !reg_count || !num_of_revolutions || !model_input) {
             alert('機種, BIG回数, REG回数 または回転数に入力漏れがあります。ぶどうシミュレーターが不要の場合にはOFFに切り替えしてください。');
             return;
         }
