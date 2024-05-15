@@ -199,11 +199,25 @@ function drawLine(){
 }
 
 //ぶどうシミュのON/OFF情報を切り替え
-function switch_on_off(){
+//ぶどうシミュのON/OFF情報を切り替え
+//ぶどうシミュのON/OFF情報を切り替え
+function switch_on_off() {
     var toggle = document.getElementById('toggle');
-    var status = document.getElementById('status');
-    Model.simulate = toggle.checked ? "ON" : "OFF"
+    var statusOn = document.getElementById('toggle-on');
+    var statusOff = document.getElementById('toggle-off');
+    Model.simulate = toggle.checked ? "ON" : "OFF";
+
+
+    if (toggle.checked) {
+        statusOn.style.color = "black";
+        statusOff.style.color = "gray";
+    } else {
+        statusOn.style.color = "gray";
+        statusOff.style.color = "black";
+    }
 }
+
+
 //機種の確率情報を管理するクラス
 class Model{
     //シミュレーターON/OFF情報

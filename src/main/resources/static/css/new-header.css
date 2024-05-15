@@ -1,72 +1,61 @@
-.nav-box{
+.nav-box {
     margin: 10px auto;
     background-color: orangered;
     width: 97vw;
     height: 7vh;
     border-radius: 90px;
-    position: relative;
-/}
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px; /* 左右に余白を追加 */
+    box-sizing: border-box; /* パディングを含めたボックスサイズ */
+}
 
 .nav-item-list {
-    float: right;
-    display: flex;  /* フレックスボックスを適用 */
-    align-items: center;  /* 子要素を縦方向の中央に揃える */
+    display: flex;
+    align-items: center;
 }
 
 .nav-content {
-    margin-right: 20px;  /* 各ナビゲーション項目の間にスペースを追加 */
+    margin-right: 20px;
     text-align: center;
-    display: inline-block;
-    vertical-align: middle;
 }
-.brand-logo{
+
+.brand-logo {
     color: white;
-    position: absolute;
-    top: 20%;
-    left: 5%;
     font-weight: bold;
     font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 40px;
 }
-.material-symbols-outlined{
+
+.material-symbols-outlined {
     color: white;
     font-size: 30px !important;
 }
 
-.nav-link{
-    color:white;
+.nav-link {
+    color: white;
     font-weight: bold;
     font-size: 20px;
-    display:flex;
-    flex-flow: column;
+    display: flex;
+    flex-direction: column; /* 縦方向に並べる */
+    align-items: center;
+    text-decoration: none; /* 下線を削除 */
 }
 
-@media (max-width:980px) {
-    .brand-logo{
-        color: white;
-        position: absolute;
-        top: 20%;
-        left: 5%;
-        font-weight: bold;
-        font-size: 50px;
+@media (max-width: 980px) {
+    .brand-logo {
+        font-size: 40px;
     }
-    /*.nav-content{*/
-    /*    display: inline-block;*/
-    /*    vertical-align: middle;*/
-    /*}*/
 
-    .nav-link .material-symbols-outlined{
-        color:white;
-        font-weight: bold;
-        font-size: 70px !important;
-        display:flex;
-        flex-flow: column;
+    .nav-link .material-symbols-outlined {
+        font-size: 50px !important;
     }
-    .nav-box{
-        margin: 10px auto;
-        background-color: orangered;
-        width: 97vw;
-        height: 7vh;
-        border-radius: 90px;
-        position: relative;
+
+    .nav-box {
+        padding: 10px; /* 内側に余白を追加 */
     }
 }
