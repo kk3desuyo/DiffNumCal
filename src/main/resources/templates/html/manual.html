@@ -79,7 +79,14 @@
 
     </div>
     <div class="grape-simulate">
-        <div>
+        <div class="grape-on-off">
+            <p class="grape-title">ぶどうシミュ</p>
+            <div class="toggle_button">
+                <input id="toggle" class="toggle_input" type='checkbox' onchange="switch_on_off()"/>
+                <label for="toggle" class="toggle_label"></label>
+            </div>
+        </div>
+        <div >
             <label for="model" class="model-label">機種名</label>
             <select id="model" name="model">
                 <option value="">選択してください</option>

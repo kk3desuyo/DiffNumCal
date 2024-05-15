@@ -198,41 +198,48 @@ function drawLine(){
 
 }
 
+//ぶどうシミュのON/OFF情報を切り替え
+function switch_on_off(){
+    var toggle = document.getElementById('toggle');
+    var status = document.getElementById('status');
+    Model.simulate = toggle.checked ? "ON" : "OFF"
+}
 //機種の確率情報を管理するクラス
 class Model{
-    //I'm
-    iam_cherry_payout = 2
-    iam_grape_payout = 8
-    iam_replay_payout = 3
-    iam_big_payout = 252
-    iam_reg_payout = 96
-    iam_big = [273.1,269.7,269.7,259.0,259.0,255.0]
-    iam_reg = [439.8,399.6,331.0,315.1,255.0,255.0]
-    iam_big_ch = [1129.93,1129.93,1129.93,1129.93,1092.27,1092.27,1092.27]
-    iam_reg_ch = [1394.38,1236.53,1092.27,1057.03,851.12,851.12]
-    iam_grape =[6.02,6.02,6.02,6.02,6.02,5.78]
-    iam_cherry =32.29
-    iam_clown　=1092.27
-    iam_bell　=1092.27
-    iam_replay = 7.3
+    //シミュレーターON/OFF情報
+    static simulate = 'OFF'
+    static #iam_cherry_payout = 2;
+    static #iam_grape_payout = 8;
+    static #iam_replay_payout = 3;
+    static #iam_big_payout = 252;
+    static #iam_reg_payout = 96;
+    static #iam_big = [273.1, 269.7, 269.7, 259.0, 259.0, 255.0];
+    static #iam_reg = [439.8, 399.6, 331.0, 315.1, 255.0, 255.0];
+    static #iam_big_ch = [1129.93, 1129.93, 1129.93, 1129.93, 1092.27, 1092.27, 1092.27];
+    static #iam_reg_ch = [1394.38, 1236.53, 1092.27, 1057.03, 851.12, 851.12];
+    static #iam_grape = [6.02, 6.02, 6.02, 6.02, 6.02, 5.78];
+    static #iam_cherry = 32.29;
+    static #iam_clown = 1092.27;
+    static #iam_bell = 1092.27;
+    static #iam_replay = 7.3;
 
     constructor(model){
         //I'mジャグラー
         if(model === "iam"){
-            this.cherry_payout = this.iam_cherry_payout;
-            this.replay_payout = this.iam_replay_payout
-            this.grape_payout  = this.iam_grape_payout
-            this.big_payout = this.iam_big_payout;
-            this.reg_payout = this.iam_reg_payout;
-            this.big = this.iam_big;
-            this.reg = this.iam_reg
-            this.big_ch = this.iam_big_ch
-            this.reg_ch = this.iam_reg_ch
-            this.grape = this.iam_grape;
-            this.clown = this.iam_clown;
-            this.bell = this.iam_bell;
-            this.cherry = this.iam_cherry;
-            this.replay = this.iam_replay;
+            this.cherry_payout = this.#iam_cherry_payout;
+            this.replay_payout = this.#iam_replay_payout
+            this.grape_payout  = this.#iam_grape_payout
+            this.big_payout = this.#iam_big_payout;
+            this.reg_payout = this.#iam_reg_payout;
+            this.big = this.#iam_big;
+            this.reg = this.#iam_reg
+            this.big_ch = this.#iam_big_ch
+            this.reg_ch = this.#iam_reg_ch
+            this.grape = this.#iam_grape;
+            this.clown = this.#iam_clown;
+            this.bell = this.#iam_bell;
+            this.cherry = this.#iam_cherry;
+            this.replay = this.#iam_replay;
         }
 
     }
@@ -253,6 +260,11 @@ class Model{
 
     }
      static grape_simulate(){
+        //シミュレータートグルのON/OFF判定
+         if(this.simulate === "OFF"){
+             return;
+         }
+
         //入力値の取得
         var big_count = sanitize(document.getElementById('big-count').value)
         var reg_count =sanitize(document.getElementById('reg-count').value)
@@ -265,14 +277,13 @@ class Model{
          console.log('revo',num_of_revolutions)
          console.log('iam',model_input)
          console.log('diff',diff_num)
-         //入力のバリデーションチェック 一個でも入力されていたらぶどうシミュを使用と判定する
-// 入力のバリデーションチェック 一個でも入力されていたらぶどうシミュを使用と判定する
-         if (big_count !== '' || reg_count !== '' || num_of_revolutions !== '' || model_input !== '') {
-             // 一個でも入力漏れがある場合
-             if (big_count === '' || reg_count === '' || num_of_revolutions === '' || model_input === '') {
-                 alert('機種, BIG回数, REG回数 または回転数が入力漏れがあります。もし、ぶどうシミュを使わない場合には、機種名、BIG,REG回数,回転数の欄にデータを一つも入力しないでください。');
-             }
+
+         // 一個でも入力漏れがある場合
+         if (big_count === '' || reg_count === '' || num_of_revolutions === '' || model_input === '') {
+             alert('機種, BIG回数, REG回数 または回転数に入力漏れがあります。ぶどうシミュレーターが不要の場合にはOFFに切り替えしてください。');
+             return;
          }
+
          console.log(big_count)
         //  var big_count = 24
         //  var reg_count =31
@@ -342,4 +353,5 @@ class Model{
          document.getElementById('grape-probability').innerText = Math.round(grape_probability * 100) / 100;
     }
 }
+
 
