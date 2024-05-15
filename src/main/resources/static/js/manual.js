@@ -163,7 +163,7 @@ function drawLine() {
     // 前回の線を消去
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    ctx.lineWidth = 5;
+    ctx.lineWidth = 1.5;
 
     // 0メモリの位置描画
     ctx.beginPath();
@@ -214,13 +214,29 @@ class Model {
     static #iam_reg_payout = 96;
     static #iam_big = [273.1, 269.7, 269.7, 259.0, 259.0, 255.0];
     static #iam_reg = [439.8, 399.6, 331.0, 315.1, 255.0, 255.0];
-    static #iam_big_ch = [1129.93, 1129.93, 1129.93, 1129.93, 1092.27, 1092.27, 1092.27];
-    static #iam_reg_ch = [1394.38, 1236.53, 1092.27, 1057.03, 851.12, 851.12];
+    static #iam_big_ch = 1100.5;
+    static #iam_reg_ch = 1122;
     static #iam_grape = [6.02, 6.02, 6.02, 6.02, 6.02, 5.78];
     static #iam_cherry = 32.29;
     static #iam_clown = 1092.27;
     static #iam_bell = 1092.27;
     static #iam_replay = 7.3;
+
+    //まい
+    static #my_cherry_payout = 2;
+    static #my_grape_payout = 8;
+    static #my_replay_payout = 3;
+    static #my_big_payout = 240;
+    static #my_reg_payout = 96;
+    static #my_big = [273.10, 270.08, 266.4, 254.0, 240.1, 229.1];
+    static  #my_reg = [409.6, 385.5, 336.1, 290.0, 268.6, 229.1];
+    static  #my_big_ch = 1247;
+    static  #my_reg_ch = 927;
+    static #my_grape = [5.90, 5.85, 5.80, 5.78, 5.76, 5.66];
+    static #my_cherry = 36.5;
+    static #my_clown = 1024;
+    static #my_bell = 1024;
+    static #my_replay = 7.3;
 
     constructor(model) {
         // I'mジャグラー
@@ -240,11 +256,32 @@ class Model {
             this.cherry = Model.#iam_cherry;
             this.replay = Model.#iam_replay;
         }
+        if(model === "my"){
+            this.cherry_payout = Model.#my_cherry_payout;
+            this.replay_payout = Model.#my_replay_payout;
+            this.grape_payout = Model.#my_grape_payout;
+            this.big_payout = Model.#my_big_payout;
+            this.reg_payout = Model.#my_reg_payout;
+            this.big = Model.#my_big;
+            this.reg = Model.#my_reg;
+            this.big_ch = Model.#my_big_ch;
+            this.reg_ch = Model.#my_reg_ch;
+            this.grape = Model.#my_grape;
+            this.clown = Model.#my_clown;
+            this.bell = Model.#my_bell;
+            this.cherry = Model.#my_cherry;
+            this.replay = Model.#my_replay;
+
+        }
     }
 
     static calculateReturns(model, num_of_revolutions) {
-        // チェリー
-        const cherry_hits = num_of_revolutions / model.cherry;
+        // チェリ
+
+        console.log('デバッグ',num_of_revolutions/model.reg_ch);
+        console.log(num_of_revolutions/model.big_ch);
+        console.log(num_of_revolutions/model.cherry);
+        const cherry_hits = num_of_revolutions / model.cherry + num_of_revolutions/model.big_ch + num_of_revolutions/model.reg_ch;
         const replay_hits = num_of_revolutions / model.replay;
         const bell_hits = num_of_revolutions / model.bell;
         const clown_hits = num_of_revolutions / model.clown;
@@ -312,7 +349,7 @@ class Model {
         // ベル
         var bell_return = hits_infos.bell * 14;
         // ピエロ
-        var clown_return = hits_infos.clown * 14;
+        var clown_return = hits_infos.clown * 10;
 
         var total_return = (big_return + reg_return + cherry_return + replay_return + bell_return + clown_return);
         var grape_return = used_num + diff_num - total_return;
