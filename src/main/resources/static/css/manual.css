@@ -179,7 +179,7 @@ body {
 .input-file-label {
     border-radius: 20px;
     margin-top: 3px;
-    width: 350px;
+    width: 380px;
     height: 50px;
     color: #ffffff; /* ラベルテキストの色を指定する */
     background-color: #eb6100; /* ラベルの背景色を指定する */
