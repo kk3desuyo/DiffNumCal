@@ -189,9 +189,9 @@ function drawLine() {
 
 // ぶどうシミュのON/OFF情報を切り替え
 function switch_on_off() {
-    var toggle = document.getElementById('toggle');
-    var statusOn = document.getElementById('toggle-on');
-    var statusOff = document.getElementById('toggle-off');
+    var toggle = document.getElementById('simu-toggle');
+    var statusOn = document.getElementById('simu-toggle-on');
+    var statusOff = document.getElementById('simu-toggle-off');
     Model.simulate = toggle.checked ? "ON" : "OFF";
 
     if (toggle.checked) {
@@ -201,12 +201,32 @@ function switch_on_off() {
         statusOn.style.color = "gray";
         statusOff.style.color = "black";
     }
+    console.log(Model.simulate)
+}
+
+
+function switch_cherry() {
+    var toggle = document.getElementById('cherry-toggle');
+    var statusOn = document.getElementById('cherry-toggle-on');
+    var statusOff = document.getElementById('cherry-toggle-off');
+    Model.aim_cherry = toggle.checked ? "ON" : "OFF";
+
+    if (toggle.checked) {
+        statusOn.style.color = "black";
+        statusOff.style.color = "gray";
+    } else {
+        statusOn.style.color = "gray";
+        statusOff.style.color = "black";
+    }
+
+    console.log(Model.aim_cherry)
 }
 
 // 機種の確率情報を管理するクラス
 class Model {
     // シミュレーターON/OFF情報
     static simulate = 'OFF';
+    static aim_cherry = 'OFF';
     static #iam_cherry_payout = 2;
     static #iam_grape_payout = 8;
     static #iam_replay_payout = 3;
@@ -285,10 +305,11 @@ class Model {
         const replay_hits = num_of_revolutions / model.replay;
         const bell_hits = num_of_revolutions / model.bell;
         const clown_hits = num_of_revolutions / model.clown;
-        console.log(cherry_hits, "   ", replay_hits, "   ", bell_hits, "   ", clown_hits);
+        console.log(cherry_hits, "   ", replay_hits, "   ", bell_hits, "   ", clown_hits, cherry_hits* (Model.aim_cherry === 'OFF'?0:1));
+
         return {
-            cherry: cherry_hits,
-            replay: replay_hits,
+            cherry: cherry_hits* (Model.aim_cherry === 'OFF'?0:1),
+            replay: replay_hits ,
             bell: bell_hits,
             clown: clown_hits
         };

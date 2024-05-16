@@ -1,129 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4793670059538491"
             crossorigin="anonymous"></script>
     <title>差枚数グラフ読み取り</title>
-    <link th:href="@{/css/manual.css}" rel="stylesheet">
-    <link th:href="@{/css/header.css}" rel="stylesheet">
+    <link rel="stylesheet" href="/css/manual.css">
+    <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
 <div th:insert="~{html/new-header}"></div>
 
-<div class="graph-and-info" >
-<div id="graph">
-    <img src="/img/uploadImg.png" class="demo-img">
-<div id="canvas">
-<!--<div id="imgPreviewField"></div>-->
-<canvas id="imgPreview" width="500px" height="500px" style="position: absolute; left: 0; top: 65px;"></canvas>
-<canvas id="drawing-canvas" width="500px" height="500px" style="position: absolute; left: 0; top: 65px;"></canvas>
-<form class="file-form">
-    <input class="input-file" id="inputFile" type="file" accept="image/*" multiple onchange="loadImage(this); hideDemoImage();">
-    <label for="inputFile" class="input-file-label"><span class="file-attention">ここをクリックしてファイルを選択</span></label>
-</form>
-
-</div>
-</div>
+<div class="graph-and-info">
+    <div id="graph">
+        <img src="/img/uploadImg.png" class="demo-img">
+        <div id="canvas">
+            <canvas id="imgPreview" width="500" height="500" style="position: absolute; left: 0; top: 65px;"></canvas>
+            <canvas id="drawing-canvas" width="500" height="500" style="position: absolute; left: 0; top: 65px;"></canvas>
+            <form class="file-form">
+                <input class="input-file" id="fileInput" type="file" accept="image/*" multiple onchange="loadImage(this); hideDemoImage();">
+                <label for="fileInput" class="input-file-label"><span class="file-attention">ここをクリックしてファイルを選択</span></label>
+            </form>
+        </div>
+    </div>
     <div class="result-and-info">
-<div class="info">
-    <h4 class="info-h title">グラフ情報一覧</h4>
-    <ul>
-        <li>
-            <div class="PosiInfo">
-                <p class="position-status">0の目盛りの位置取得</p>
-                <input id="min-slider" class="slider" type="range">
-
+        <div class="info">
+            <h4 class="info-h title">グラフ情報一覧</h4>
+            <ul>
+                <li>
+                    <div class="PosiInfo">
+                        <p class="position-status">0の目盛りの位置取得</p>
+                        <input id="min-slider" class="slider" type="range">
+                    </div>
+                </li>
+                <li>
+                    <div class="PosiInfo">
+                        <p class="position-status">グラフ目盛りの位置取得</p>
+                        <input id="max-slider" class="slider" type="range" >
+                    </div>
+                </li>
+                <li>
+                    <div class="PosiInfo">
+                        <p class="position-status">最終位置</p>
+                        <input id="final-slider" class="slider" type="range" >
+                    </div>
+                </li>
+                <li>
+                    <div class="PosiInfo">
+                        <p class="position-status">グラフ目盛りの値</p>
+                        <input type="number" id="memory-num" class="input-font">
+                    </div>
+                </li>
+            </ul>
+            <button id="submit-info" onclick="diffNumCal(); Model.grape_simulate();">差枚数計算</button>
+        </div>
+        <div class="left-display">
+            <div class="result-display">
+                <p class="result-title title">計算結果</p>
+                <div class="result-container">
+                    <p class="result">差枚数 :</p>
+                    <p id="diff-num" class="result">-</p>
+                    <p class="result">枚</p>
+                </div>
+                <div class="result-container">
+                    <p class="result">ぶどう確率 : 1/</p>
+                    <p id="grape-probability" class="result">-</p>
+                </div>
             </div>
-        </li>
-        <li>
-            <div class="PosiInfo">
-                <p class="position-status">グラフ目盛りの位置取得</p>
-                <input id="max-slider" class="slider" type="range" >
+            <div class="grape-simulate">
+                <div class="grape-on-off">
+                    <p class="grape-title">ぶどうシミュ</p>
+                    <div class="toggle_button">
+                        <span id="simu-toggle-off" class="toggle-status">OFF</span> <!-- OFFラベル -->
+                        <input id="simu-toggle" class="toggle_input" type='checkbox' onchange="switch_on_off()"/>
+                        <label for="simu-toggle" class="toggle_label"></label>
+                        <span id="simu-toggle-on" class="toggle-status">ON</span> <!-- ONラベル -->
+                    </div>
+                </div>
+                <div class="grape-on-off">
+                    <p class="cherry-title">チェリー狙い</p>
+                    <div class="toggle_button">
+                        <span id="cherry-toggle-off" class="toggle-status">OFF</span> <!-- OFFラベル -->
+                        <input id="cherry-toggle" class="toggle_input" type='checkbox' onchange="switch_cherry()"/>
+                        <label for="cherry-toggle" class="toggle_label"></label>
+                        <span id="cherry-toggle-on" class="toggle-status">ON</span> <!-- ONラベル -->
+                    </div>
+                </div>
+                <div>
+                    <label for="model" class="model-label">機種名</label>
+                    <select id="model" name="model">
+                        <option value="">選択してください</option>
+                        <option value="iam">アイムジャグラー</option>
+                        <option value="my">マイジャグラー</option>
+                    </select>
+                </div>
+                <div class="nice-wrap">
+                    <input class="grape-input" id="big-count" type="number">
+                    <label class="big-count-label label-base">BIG回数</label>
+                </div>
+                <div class="nice-wrap">
+                    <input class="grape-input" id="reg-count" type="number">
+                    <label class="reg-count-count-label label-base">REG回数</label>
+                </div>
+                <div class="nice-wrap">
+                    <input class="grape-input" id="revolutions" type="number">
+                    <label class="revolutions-label label-base">回転数</label>
+                </div>
+                <div class="grape-attention">
+                    <p class="grape-attention-content">※差枚数のみの利用の場合には機種名、BIG,REG回数、回転数の入力は不要です。</p>
+                </div>
             </div>
-        </li>
-        <li>
-            <div class="PosiInfo">
-                <p class="position-status">最終位置</p>
-                <input id="final-slider" class="slider" type="range" >
-
-            </div>
-
-        </li>
-        <li>
-            <div class="PosiInfo">
-                <p class="position-status">グラフ目盛りの値</p>
-                <input type="number" id="memory-num" class="input-font">
-
-            </div>
-
-        </li>
-
-    </ul>
-
-    <button id="submit-info" onclick="diffNumCal(); Model.grape_simulate();">差枚数計算</button>
-</div>
-<div class="left-display">
-    <div class="result-display">
-        <p class="result-title title">計算結果</p>
-        <div class="result-container">
-            <p class="result">差枚数 :</p>
-            <p id="diff-num" class="result">-</p>
-            <p class="result">枚</p>
-        </div>
-        <div class="result-container">
-            <p  class="result">ぶどう確率 : 1/</p>
-            <p id="grape-probability" class="result">-</p>
-        </div>
-
-    </div>
-    <div class="grape-simulate">
-        <div class="grape-on-off">
-            <p class="grape-title">ぶどうシミュ</p>
-            <div class="toggle_button">
-                <span id="toggle-off" class="toggle-status">OFF</span> <!-- OFFラベル -->
-                <input id="toggle" class="toggle_input" type='checkbox' onchange="switch_on_off()"/>
-                <label for="toggle" class="toggle_label"></label>
-                <span id="toggle-on" class="toggle-status">ON</span> <!-- ONラベル -->
-            </div>
-        </div>
-
-
-
-        <div >
-            <label for="model" class="model-label">機種名</label>
-            <select id="model" name="model">
-                <option value="">選択してください</option>
-                <option value="iam">アイムジャグラー</option>
-<!--                <option value="fanky">ファンキージャグラー</option>-->
-                <option value="my">マイジャグラー</option>
-<!--                <option value="happy">ハッピー-->
-                </option>
-            </select>
-        </div>
-        <div class="nice-wrap">
-            <input class=" grape-input" id="big-count" type="number">
-            <label class="big-count-label label-base">BIG回数</label>
-        </div>
-        <div class="nice-wrap">
-            <input class=" grape-input" id="reg-count" type="number">
-            <label class="reg-count-count-label label-base">REG回数</label>
-        </div>
-        <div class="nice-wrap">
-            <input class=" grape-input" id="revolutions"  type="number">
-            <label class="revolutions-label label-base">回転数</label>
-        </div>
-        <div class="grape-attention">
-            <p class="grape-attention-content">※差枚数のみの利用の場合には機種名、BIG,REG回数、回転数の入力は不要です。</p>
+\
         </div>
     </div>
 </div>
-    </div>
-</div>
-
-
-
 <script src="/js/manual.js"></script>
 </body>
 </html>

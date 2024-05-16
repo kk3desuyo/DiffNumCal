@@ -1,5 +1,5 @@
 body {
-    background-color: #ffffff; /* 全体の背景色を白に設定 */
+    background-color: #ffffff; /* å…¨ä½“ã®èƒŒæ™¯è‰²ã‚’ç™½ã«è¨­å®š */
 }
 
 .demo-img {
@@ -8,29 +8,29 @@ body {
 }
 
 #canvas {
-    position: relative; /* 確実にこの要素がスタックコンテキストを持つように */
-    z-index: 1; /* 必要に応じて適切なz-indexを設定 */
+    position: relative; /* ç¢ºå®Ÿã«ã“ã®è¦ç´ ãŒã‚¹ã‚¿ãƒƒã‚¯ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆã‚’æŒã¤ã‚ˆã†ã« */
+    z-index: 1; /* å¿…è¦ã«å¿œã˜ã¦é©åˆ‡ãªz-indexã‚’è¨­å®š */
 }
 
 #graph {
-    width: 97%; /* 親要素に対して90%の幅 */
-    height: 375px; /* ビューポートの高さの40% */
-    margin: 0 auto; /* 水平中央に配置 */
+    width: 97%; /* è¦ªè¦ç´ ã«å¯¾ã—ã¦90%ã®å¹… */
+    height: 375px; /* ãƒ“ãƒ¥ãƒ¼ãƒãƒ¼ãƒˆã®é«˜ã•ã®40% */
+    margin: 0 auto; /* æ°´å¹³ä¸­å¤®ã«é…ç½® */
     padding: 10px;
     border: 1px solid #333333;
     border-radius: 10px;
-    position: relative; /* 子要素の絶対位置指定の基準点 */
+    position: relative; /* å­è¦ç´ ã®çµ¶å¯¾ä½ç½®æŒ‡å®šã®åŸºæº–ç‚¹ */
     text-align: center;
     background-color: #f0f0f0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 軽いシャドウ効果 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* è»½ã„ã‚·ãƒ£ãƒ‰ã‚¦åŠ¹æžœ */
 }
 
 .result-and-info {
     display: flex;
-    justify-content: space-between; /* 要素間の間隔を均等に分配 */
-    align-items: flex-start; /* 要素をコンテナの上端に揃える */
-    width: 100%; /* コンテナの幅を最大に */
-    padding: 0 10px; /* 左右のパディングを追加して隙間を調整 */
+    justify-content: space-between; /* è¦ç´ é–“ã®é–“éš”ã‚’å‡ç­‰ã«åˆ†é… */
+    align-items: flex-start; /* è¦ç´ ã‚’ã‚³ãƒ³ãƒ†ãƒŠã®ä¸Šç«¯ã«æƒãˆã‚‹ */
+    width: 100%; /* ã‚³ãƒ³ãƒ†ãƒŠã®å¹…ã‚’æœ€å¤§ã« */
+    padding: 0 10px; /* å·¦å³ã®ãƒ‘ãƒ‡ã‚£ãƒ³ã‚°ã‚’è¿½åŠ ã—ã¦éš™é–“ã‚’èª¿æ•´ */
 }
 
 .result-title {
@@ -43,7 +43,7 @@ body {
 }
 
 .title {
-    font-family: "ヒラギノ角ゴ Pro W3", sans-serif;
+    font-family: "ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3", sans-serif;
     position: relative;
     padding: 0.25em 1em;
     border-top: solid 2px black;
@@ -74,12 +74,12 @@ body {
 }
 
 .info {
-    background-color: #f0f0f0; /* グレー背景 */
-    margin-right: 5px; /* infoとresult-displayの間の隙間を調整 */
+    background-color: #f0f0f0; /* ã‚°ãƒ¬ãƒ¼èƒŒæ™¯ */
+    margin-right: 5px; /* infoã¨result-displayã®é–“ã®éš™é–“ã‚’èª¿æ•´ */
     padding: 10px;
     border: 1px solid #333333;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 軽いシャドウ効果 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* è»½ã„ã‚·ãƒ£ãƒ‰ã‚¦åŠ¹æžœ */
 }
 
 .left-display {
@@ -94,7 +94,7 @@ body {
     left: 10px;
     font-size: 16px;
     color: #a0a0a0;
-    margin-left: 5%; /* 残りの幅を均等に左右に配置 */
+    margin-left: 5%; /* æ®‹ã‚Šã®å¹…ã‚’å‡ç­‰ã«å·¦å³ã«é…ç½® */
     margin-right: 5%;
     margin-top: 10px;
     transition: all 0.25s ease;
@@ -125,11 +125,11 @@ body {
     padding: 10px;
     border: 1px solid #333333;
     border-radius: 10px;
-    position: relative; /* 子要素の絶対位置指定の基準点 */
+    position: relative; /* å­è¦ç´ ã®çµ¶å¯¾ä½ç½®æŒ‡å®šã®åŸºæº–ç‚¹ */
     margin-left: 13px;
     width: 100%;
-    background-color: #f0f0f0; /* グレー背景 */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 軽いシャドウ効果 */
+    background-color: #f0f0f0; /* ã‚°ãƒ¬ãƒ¼èƒŒæ™¯ */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* è»½ã„ã‚·ãƒ£ãƒ‰ã‚¦åŠ¹æžœ */
 }
 
 .grape-simulate {
@@ -139,22 +139,22 @@ body {
     border-radius: 10px;
     margin-left: 13px;
     width: 100%;
-    background-color: #f0f0f0; /* グレー背景 */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 軽いシャドウ効果 */
-    display: flex; /* 追加: フレックスボックスを使う */
-    flex-direction: column; /* 追加: 縦方向に並べる */
-    align-items: center; /* 追加: 子要素を中央に揃える */
+    background-color: #f0f0f0; /* ã‚°ãƒ¬ãƒ¼èƒŒæ™¯ */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* è»½ã„ã‚·ãƒ£ãƒ‰ã‚¦åŠ¹æžœ */
+    display: flex; /* è¿½åŠ : ãƒ•ãƒ¬ãƒƒã‚¯ã‚¹ãƒœãƒƒã‚¯ã‚¹ã‚’ä½¿ã† */
+    flex-direction: column; /* è¿½åŠ : ç¸¦æ–¹å‘ã«ä¸¦ã¹ã‚‹ */
+    align-items: center; /* è¿½åŠ : å­è¦ç´ ã‚’ä¸­å¤®ã«æƒãˆã‚‹ */
 }
 
 .info, .result-display {
-    flex: 1; /* 各要素が利用可能なスペースを均等に使用 */
-    margin: 10px; /* 共通のマージンを設定して余白を一定に */
+    flex: 1; /* å„è¦ç´ ãŒåˆ©ç”¨å¯èƒ½ãªã‚¹ãƒšãƒ¼ã‚¹ã‚’å‡ç­‰ã«ä½¿ç”¨ */
+    margin: 10px; /* å…±é€šã®ãƒžãƒ¼ã‚¸ãƒ³ã‚’è¨­å®šã—ã¦ä½™ç™½ã‚’ä¸€å®šã« */
     padding: 10px;
     border: 1px solid #333333;
     border-radius: 10px;
-    box-sizing: border-box; /* パディングとボーダーを幅に含む */
-    background-color: #f0f0f0; /* グレー背景 */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 軽いシャドウ効果 */
+    box-sizing: border-box; /* ãƒ‘ãƒ‡ã‚£ãƒ³ã‚°ã¨ãƒœãƒ¼ãƒ€ãƒ¼ã‚’å¹…ã«å«ã‚€ */
+    background-color: #f0f0f0; /* ã‚°ãƒ¬ãƒ¼èƒŒæ™¯ */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* è»½ã„ã‚·ãƒ£ãƒ‰ã‚¦åŠ¹æžœ */
 }
 
 .input-file-label {
@@ -163,8 +163,8 @@ body {
 }
 
 .result-container {
-    display: inline-flex; /* インラインフレックスボックス */
-    align-items: center; /* 要素を中央揃え */
+    display: inline-flex; /* ã‚¤ãƒ³ãƒ©ã‚¤ãƒ³ãƒ•ãƒ¬ãƒƒã‚¯ã‚¹ãƒœãƒƒã‚¯ã‚¹ */
+    align-items: center; /* è¦ç´ ã‚’ä¸­å¤®æƒãˆ */
 }
 
 .file-form {
@@ -181,10 +181,10 @@ body {
     margin-top: 3px;
     width: 380px;
     height: 50px;
-    color: #ffffff; /* ラベルテキストの色を指定する */
-    background-color: #eb6100; /* ラベルの背景色を指定する */
-    padding: 10px; /* ラベルとテキスト間の余白を指定する */
-    border: double 4px #AAAAAA; /* ラベルのボーダーを指定する */
+    color: #ffffff; /* ãƒ©ãƒ™ãƒ«ãƒ†ã‚­ã‚¹ãƒˆã®è‰²ã‚’æŒ‡å®šã™ã‚‹ */
+    background-color: #eb6100; /* ãƒ©ãƒ™ãƒ«ã®èƒŒæ™¯è‰²ã‚’æŒ‡å®šã™ã‚‹ */
+    padding: 10px; /* ãƒ©ãƒ™ãƒ«ã¨ãƒ†ã‚­ã‚¹ãƒˆé–“ã®ä½™ç™½ã‚’æŒ‡å®šã™ã‚‹ */
+    border: double 4px #AAAAAA; /* ãƒ©ãƒ™ãƒ«ã®ãƒœãƒ¼ãƒ€ãƒ¼ã‚’æŒ‡å®šã™ã‚‹ */
 }
 
 #submit-info {
@@ -196,75 +196,75 @@ body {
 }
 
 #min-slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* 🚩これ無しだとスタイルがほぼ全く反映されないので注意 */
+    -webkit-appearance: none; /* ðŸš©ã“ã‚Œç„¡ã—ã ã¨ã‚¹ã‚¿ã‚¤ãƒ«ãŒã»ã¼å…¨ãåæ˜ ã•ã‚Œãªã„ã®ã§æ³¨æ„ */
     appearance: none;
-    cursor: pointer; /* カーソルを分かりやすく */
-    outline: none; /* スライダーのアウトラインは見た目がキツイので消す */
-    height: 40px; /* バーの高さ */
-    width: 30px; /* バーの幅 */
-    background: #00FF00; /* バーの背景色 */
-    border-radius: 10px; /* バーの両端の丸み */
-    border: solid 3px #dff1ff; /* バー周囲の線 */        /* サムを円形にする */
+    cursor: pointer; /* ã‚«ãƒ¼ã‚½ãƒ«ã‚’åˆ†ã‹ã‚Šã‚„ã™ã */
+    outline: none; /* ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®ã‚¢ã‚¦ãƒˆãƒ©ã‚¤ãƒ³ã¯è¦‹ãŸç›®ãŒã‚­ãƒ„ã‚¤ã®ã§æ¶ˆã™ */
+    height: 40px; /* ãƒãƒ¼ã®é«˜ã• */
+    width: 30px; /* ãƒãƒ¼ã®å¹… */
+    background: #00FF00; /* ãƒãƒ¼ã®èƒŒæ™¯è‰² */
+    border-radius: 10px; /* ãƒãƒ¼ã®ä¸¡ç«¯ã®ä¸¸ã¿ */
+    border: solid 3px #dff1ff; /* ãƒãƒ¼å‘¨å›²ã®ç·š */        /* ã‚µãƒ ã‚’å††å½¢ã«ã™ã‚‹ */
 }
 
 #min-slider {
-    -webkit-appearance: none; /* 🚩これ無しだとスタイルがほぼ全く反映されないので注意 */
+    -webkit-appearance: none; /* ðŸš©ã“ã‚Œç„¡ã—ã ã¨ã‚¹ã‚¿ã‚¤ãƒ«ãŒã»ã¼å…¨ãåæ˜ ã•ã‚Œãªã„ã®ã§æ³¨æ„ */
     appearance: none;
-    cursor: pointer; /* カーソルを分かりやすく */
-    outline: none; /* スライダーのアウトラインは見た目がキツイので消す */
-    height: 14px; /* バーの高さ */
-    width: 100%; /* バーの幅 */
-    background: #00FF00; /* バーの背景色 */
-    border-radius: 10px; /* バーの両端の丸み */
-    border: solid 3px #dff1ff; /* バー周囲の線 */
+    cursor: pointer; /* ã‚«ãƒ¼ã‚½ãƒ«ã‚’åˆ†ã‹ã‚Šã‚„ã™ã */
+    outline: none; /* ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®ã‚¢ã‚¦ãƒˆãƒ©ã‚¤ãƒ³ã¯è¦‹ãŸç›®ãŒã‚­ãƒ„ã‚¤ã®ã§æ¶ˆã™ */
+    height: 14px; /* ãƒãƒ¼ã®é«˜ã• */
+    width: 100%; /* ãƒãƒ¼ã®å¹… */
+    background: #00FF00; /* ãƒãƒ¼ã®èƒŒæ™¯è‰² */
+    border-radius: 10px; /* ãƒãƒ¼ã®ä¸¡ç«¯ã®ä¸¸ã¿ */
+    border: solid 3px #dff1ff; /* ãƒãƒ¼å‘¨å›²ã®ç·š */
 }
 
 #max-slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* 🚩これ無しだとスタイルがほぼ全く反映されないので注意 */
+    -webkit-appearance: none; /* ðŸš©ã“ã‚Œç„¡ã—ã ã¨ã‚¹ã‚¿ã‚¤ãƒ«ãŒã»ã¼å…¨ãåæ˜ ã•ã‚Œãªã„ã®ã§æ³¨æ„ */
     appearance: none;
-    cursor: pointer; /* カーソルを分かりやすく */
-    outline: none; /* スライダーのアウトラインは見た目がキツイので消す */
-    height: 40px; /* バーの高さ */
-    width: 30px; /* バーの幅 */
-    background: #00FFFF; /* バーの背景色 */
-    border-radius: 10px; /* バーの両端の丸み */
-    border: solid 3px #dff1ff; /* バー周囲の線 */        /* サムを円形にする */
+    cursor: pointer; /* ã‚«ãƒ¼ã‚½ãƒ«ã‚’åˆ†ã‹ã‚Šã‚„ã™ã */
+    outline: none; /* ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®ã‚¢ã‚¦ãƒˆãƒ©ã‚¤ãƒ³ã¯è¦‹ãŸç›®ãŒã‚­ãƒ„ã‚¤ã®ã§æ¶ˆã™ */
+    height: 40px; /* ãƒãƒ¼ã®é«˜ã• */
+    width: 30px; /* ãƒãƒ¼ã®å¹… */
+    background: #00FFFF; /* ãƒãƒ¼ã®èƒŒæ™¯è‰² */
+    border-radius: 10px; /* ãƒãƒ¼ã®ä¸¡ç«¯ã®ä¸¸ã¿ */
+    border: solid 3px #dff1ff; /* ãƒãƒ¼å‘¨å›²ã®ç·š */        /* ã‚µãƒ ã‚’å††å½¢ã«ã™ã‚‹ */
 }
 
 #max-slider {
-    -webkit-appearance: none; /* 🚩これ無しだとスタイルがほぼ全く反映されないので注意 */
+    -webkit-appearance: none; /* ðŸš©ã“ã‚Œç„¡ã—ã ã¨ã‚¹ã‚¿ã‚¤ãƒ«ãŒã»ã¼å…¨ãåæ˜ ã•ã‚Œãªã„ã®ã§æ³¨æ„ */
     appearance: none;
-    cursor: pointer; /* カーソルを分かりやすく */
-    outline: none; /* スライダーのアウトラインは見た目がキツイので消す */
-    height: 14px; /* バーの高さ */
-    width: 100%; /* バーの幅 */
-    background: #00FFFF; /* バーの背景色 */
-    border-radius: 10px; /* バーの両端の丸み */
-    border: solid 3px #dff1ff; /* バー周囲の線 */
+    cursor: pointer; /* ã‚«ãƒ¼ã‚½ãƒ«ã‚’åˆ†ã‹ã‚Šã‚„ã™ã */
+    outline: none; /* ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®ã‚¢ã‚¦ãƒˆãƒ©ã‚¤ãƒ³ã¯è¦‹ãŸç›®ãŒã‚­ãƒ„ã‚¤ã®ã§æ¶ˆã™ */
+    height: 14px; /* ãƒãƒ¼ã®é«˜ã• */
+    width: 100%; /* ãƒãƒ¼ã®å¹… */
+    background: #00FFFF; /* ãƒãƒ¼ã®èƒŒæ™¯è‰² */
+    border-radius: 10px; /* ãƒãƒ¼ã®ä¸¡ç«¯ã®ä¸¸ã¿ */
+    border: solid 3px #dff1ff; /* ãƒãƒ¼å‘¨å›²ã®ç·š */
 }
 
 #final-slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* 🚩これ無しだとスタイルがほぼ全く反映されないので注意 */
+    -webkit-appearance: none; /* ðŸš©ã“ã‚Œç„¡ã—ã ã¨ã‚¹ã‚¿ã‚¤ãƒ«ãŒã»ã¼å…¨ãåæ˜ ã•ã‚Œãªã„ã®ã§æ³¨æ„ */
     appearance: none;
-    cursor: pointer; /* カーソルを分かりやすく */
-    outline: none; /* スライダーのアウトラインは見た目がキツイので消す */
-    height: 40px; /* バーの高さ */
-    width: 30px; /* バーの幅 */
-    background: #FF00FF; /* バーの背景色 */
-    border-radius: 10px; /* バーの両端の丸み */
-    border: solid 3px #dff1ff; /* バー周囲の線 */        /* サムを円形にする */
+    cursor: pointer; /* ã‚«ãƒ¼ã‚½ãƒ«ã‚’åˆ†ã‹ã‚Šã‚„ã™ã */
+    outline: none; /* ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®ã‚¢ã‚¦ãƒˆãƒ©ã‚¤ãƒ³ã¯è¦‹ãŸç›®ãŒã‚­ãƒ„ã‚¤ã®ã§æ¶ˆã™ */
+    height: 40px; /* ãƒãƒ¼ã®é«˜ã• */
+    width: 30px; /* ãƒãƒ¼ã®å¹… */
+    background: #FF00FF; /* ãƒãƒ¼ã®èƒŒæ™¯è‰² */
+    border-radius: 10px; /* ãƒãƒ¼ã®ä¸¡ç«¯ã®ä¸¸ã¿ */
+    border: solid 3px #dff1ff; /* ãƒãƒ¼å‘¨å›²ã®ç·š */        /* ã‚µãƒ ã‚’å††å½¢ã«ã™ã‚‹ */
 }
 
 #final-slider {
-    -webkit-appearance: none; /* 🚩これ無しだとスタイルがほぼ全く反映されないので注意 */
+    -webkit-appearance: none; /* ðŸš©ã“ã‚Œç„¡ã—ã ã¨ã‚¹ã‚¿ã‚¤ãƒ«ãŒã»ã¼å…¨ãåæ˜ ã•ã‚Œãªã„ã®ã§æ³¨æ„ */
     appearance: none;
-    cursor: pointer; /* カーソルを分かりやすく */
-    outline: none; /* スライダーのアウトラインは見た目がキツイので消す */
-    height: 14px; /* バーの高さ */
-    width: 100%; /* バーの幅 */
-    background: #FF00FF; /* バーの背景色 */
-    border-radius: 10px; /* バーの両端の丸み */
-    border: solid 3px #dff1ff; /* バー周囲の線 */
+    cursor: pointer; /* ã‚«ãƒ¼ã‚½ãƒ«ã‚’åˆ†ã‹ã‚Šã‚„ã™ã */
+    outline: none; /* ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®ã‚¢ã‚¦ãƒˆãƒ©ã‚¤ãƒ³ã¯è¦‹ãŸç›®ãŒã‚­ãƒ„ã‚¤ã®ã§æ¶ˆã™ */
+    height: 14px; /* ãƒãƒ¼ã®é«˜ã• */
+    width: 100%; /* ãƒãƒ¼ã®å¹… */
+    background: #FF00FF; /* ãƒãƒ¼ã®èƒŒæ™¯è‰² */
+    border-radius: 10px; /* ãƒãƒ¼ã®ä¸¡ç«¯ã®ä¸¸ã¿ */
+    border: solid 3px #dff1ff; /* ãƒãƒ¼å‘¨å›²ã®ç·š */
 }
 
 .input-font {
@@ -278,15 +278,15 @@ body {
     }
 
     .slider {
-        -webkit-appearance: none; /* 🚩これ無しだとスタイルがほぼ全く反映されないので注意 */
+        -webkit-appearance: none; /* ðŸš©ã“ã‚Œç„¡ã—ã ã¨ã‚¹ã‚¿ã‚¤ãƒ«ãŒã»ã¼å…¨ãåæ˜ ã•ã‚Œãªã„ã®ã§æ³¨æ„ */
         appearance: none;
-        cursor: pointer; /* カーソルを分かりやすく */
-        outline: none; /* スライダーのアウトラインは見た目がキツイので消す */
-        height: 14px; /* バーの高さ */
-        width: 100%; /* バーの幅 */
-        background: #8acdff; /* バーの背景色 */
-        border-radius: 10px; /* バーの両端の丸み */
-        border: solid 3px #dff1ff; /* バー周囲の線 */
+        cursor: pointer; /* ã‚«ãƒ¼ã‚½ãƒ«ã‚’åˆ†ã‹ã‚Šã‚„ã™ã */
+        outline: none; /* ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®ã‚¢ã‚¦ãƒˆãƒ©ã‚¤ãƒ³ã¯è¦‹ãŸç›®ãŒã‚­ãƒ„ã‚¤ã®ã§æ¶ˆã™ */
+        height: 14px; /* ãƒãƒ¼ã®é«˜ã• */
+        width: 100%; /* ãƒãƒ¼ã®å¹… */
+        background: #8acdff; /* ãƒãƒ¼ã®èƒŒæ™¯è‰² */
+        border-radius: 10px; /* ãƒãƒ¼ã®ä¸¡ç«¯ã®ä¸¸ã¿ */
+        border: solid 3px #dff1ff; /* ãƒãƒ¼å‘¨å›²ã®ç·š */
     }
 }
 
@@ -303,7 +303,6 @@ body {
     width: 97%;
     height: 50px;
 }
-
 .grape-attention-content, .model-label {
     font-size: 27px;
     font-weight: bold;
@@ -311,9 +310,10 @@ body {
 
 .grape-on-off {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .toggle_input {
@@ -336,7 +336,7 @@ body {
     border-radius: 40px;
     transition: 0.4s;
     box-sizing: border-box;
-    margin: 0 10px; /* ラベル間の間隔を調整 */
+    margin: 0 10px;
 }
 
 .toggle_label:after {
@@ -366,19 +366,28 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px; /* 各トグルスイッチ間に余白を追加 */
 }
 
 .grape-title {
-    padding-top: 10px;
-    padding-left: 10px;
+    margin-top: 15px;
+    margin-bottom: 3px;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
+    margin-right: 10px; /* トグルスイッチとの間に余白を追加 */
 }
 
+.cherry-title {
+    margin-top: 0;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 10px; /* トグルスイッチとの間に余白を追加 */
+}
 .toggle-status {
     font-weight: bold;
     font-size: 20px;
     color: gray; /* 初期状態はグレー */
+    margin: 0 5px; /* 上下の間隔を調整 */
 }
 
 #toggle-off {

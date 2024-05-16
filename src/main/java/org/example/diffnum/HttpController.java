@@ -1,7 +1,16 @@
 package org.example.diffnum;
 import ch.qos.logback.core.model.Model;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import java.io.*;
 
 @Controller
 public class HttpController {
@@ -23,4 +32,8 @@ public class HttpController {
     public String showManualCalHowTo(Model model) {
         return "html/how-to";  // templates/html/manual.htmlへのビュー名を返す
     }
+
+    //画像傾き補正のためのpython呼び出し
+
 }
+
