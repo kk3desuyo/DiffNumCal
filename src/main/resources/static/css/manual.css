@@ -15,7 +15,7 @@ body {
   z-index: 10;
 }
 
-/* アンケートのCSS */
+/* アンケートのCS部分 */
 .popup {
   display: none;
   position: fixed;
