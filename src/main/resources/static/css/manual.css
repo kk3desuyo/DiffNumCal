@@ -1,12 +1,7 @@
 body {
-  background-color: #ffffff; /* å…¨ä½“ã®èƒŒæ™¯è‰²ã‚’ç™½ã«è¨­å®š */
-}
-
-body {
   background-color: #ffffff; /* 全体の背景色を白に設定 */
   font-family: Arial, sans-serif;
 }
-/* アンケートのCSS */
 
 /* オーバーレイのCSS */
 .overlay {
@@ -19,10 +14,12 @@ body {
   background-color: rgba(0, 0, 0, 0.5); /* 半透明のグレー背景 */
   z-index: 10;
 }
+
+/* アンケートのCSS */
 .popup {
   display: none;
   position: fixed;
-  width: 700px; /* ポップアップの幅を広げる */
+  width: 500px; /* ポップアップの幅を広げる */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -57,6 +54,11 @@ body {
   right: 10px;
   cursor: pointer;
   color: #aaa;
+  font-size: 40px; /* バツボタンをもっと大きくする */
+  width: 40px; /* バツボタンの幅 */
+  height: 40px; /* バツボタンの高さ */
+  line-height: 40px; /* テキストの行の高さ */
+  text-align: center; /* テキストを中央に配置 */
 }
 .popup .close:hover {
   color: #000;
