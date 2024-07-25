@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey Popup</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+      }
+      .popup {
+        width: 400px;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        text-align: center;
+        position: relative;
+      }
+      .popup h2 {
+        margin-top: 0;
+      }
+      .popup a {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+      .popup a:hover {
+        background-color: #0056b3;
+      }
+      .popup .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        color: #aaa;
+        font-size: 20px;
+      }
+      .popup .close:hover {
+        color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="overlay" class="overlay">
+      <div class="popup">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <h2>アンケートにご協力ください</h2>
+        <p>サービス向上のため、アンケートにご協力をお願いします。</p>
+        <a href="https://your-survey-url.com" target="_blank"
+          >アンケートに回答する</a
+        >
+      </div>
+    </div>
+
+    <script>
+      window.onload = function () {
+        document.getElementById("overlay").style.display = "flex";
+      };
+
+      function closePopup() {
+        document.getElementById("overlay").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
