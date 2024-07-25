@@ -179,5 +179,72 @@
         event.stopPropagation();
       };
     </script>
+    <style>
+      body {
+        background-color: #ffffff; /* 全体の背景色を白に設定 */
+        font-family: Arial, sans-serif;
+      }
+
+      /* オーバーレイのCSS */
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* 半透明のグレー背景 */
+        z-index: 10;
+      }
+
+      /* アンケートのCS部分 */
+      .popup {
+        display: none;
+        position: fixed;
+        width: 500px; /* ポップアップの幅を広げる */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        text-align: center;
+        z-index: 11;
+      }
+      .popup h2 {
+        margin-top: 0;
+      }
+      .popup p {
+        white-space: nowrap; /* テキストの折り返しを防ぐ */
+      }
+      .popup a {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+      .popup a:hover {
+        background-color: #0056b3;
+      }
+      .popup .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        color: #aaa;
+        font-size: 40px; /* バツボタンをもっと大きくする */
+        width: 40px; /* バツボタンの幅 */
+        height: 40px; /* バツボタンの高さ */
+        line-height: 40px; /* テキストの行の高さ */
+        text-align: center; /* テキストを中央に配置 */
+      }
+      .popup .close:hover {
+        color: #000;
+      }
+    </style>
   </body>
 </html>
