@@ -12,13 +12,11 @@
   </head>
   <body>
     <div th:insert="~{html/new-header}"></div>
-    <div id="overlay" class="overlay"></div>
+    <div id="overlay" class="overlay" onclick="closePopup()"></div>
     <div id="surveyPopup" class="popup">
       <span class="close" onclick="closePopup()">&times;</span>
       <h2>アンケートにご協力ください</h2>
-      <p>
-        サービス向上のため、追加機能、改善点アンケートにご協力をお願いします。
-      </p>
+      <p>サービス向上のため、アンケートにご協力をお願いします。</p>
       <a href="https://forms.gle/Dp3tMghK4nGBemJ66" target="_blank"
         >アンケートに回答する</a
       >
@@ -175,6 +173,11 @@
         document.getElementById("overlay").style.display = "none";
         document.getElementById("surveyPopup").style.display = "none";
       }
+
+      // ポップアップが閉じられないようにする
+      document.getElementById("surveyPopup").onclick = function (event) {
+        event.stopPropagation();
+      };
     </script>
   </body>
 </html>
